@@ -4,12 +4,24 @@
 <title>Calendar Directive Challenge</title>
 <link rel="stylesheet" type="text/css" href="./main.css" />
 </head>
-<body>
+<body ng-controller="calendarController">
+<p>Choose month:&nbsp;
+	<select ng-model="selected_month">
+		<option ng-repeat="month in month_choices">{{month}}</option>
+	</select>
+	&nbsp;Choose year:&nbsp;
+	<select ng-model="selected_year">
+		<option ng-repeat="year in year_choices">{{year}}</option>
+	</select>
+</p>
+
+
+<calendar-week></calendar-week>
 
 <!-- your code for nav and calendar directive instance here -->
 
 <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="./utilities/calendarRange.js"></script>
+<script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
 <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>
