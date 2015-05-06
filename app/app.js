@@ -5,7 +5,6 @@
 		var current_date = new Date();
 		var year_choices = [];
 		var current_year = current_date.getFullYear();
-		console.log(current_date.getFullYear());
 		for (var i = -20; i <= 20; i++){
 			year_choices.push(current_year + i);
 		}
@@ -29,7 +28,7 @@
 
 		return {
 			restrict:'E',
-			template: template,
+			templateUrl: "calendar_directive_template.html",
 			scope: true,
 			transclude: true,
 			controller: function($scope, $element, $attrs){
@@ -37,14 +36,7 @@
 				init();
 
 				function init(){
-					$scope.dates = CalendarRange.getMonthlyRange(new Date()).days;
-					//console.log('hello from the init function!');
-					//find current month
-					//console.log(CalendarRange.prepareDate(new Date()));
-					//return relevant info about the month
-					//console.log(CalendarRange.getMonthlyRange(new Date()));
-
-					//console.log(CalendarRange.getMonthlyRange(new Date()).days);
+					
 					makeWeeks(new Date());
 				}
 
