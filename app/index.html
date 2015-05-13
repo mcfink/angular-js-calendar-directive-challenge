@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="calendarDemoApp">
 <head>
-<title>Calendar Directive Challenge</title>
-<link rel="stylesheet" type="text/css" href="./main.css" />
+	<title>Calendar Directive Challenge</title>
+	<link rel="stylesheet" type="text/css" href="./main.css" />
 </head>
-<body ng-controller="calendarController">
-<p>Choose month:&nbsp;
-	<select ng-model="selected_month">
-		<option ng-repeat="month in month_choices">{{month}}</option>
-	</select>
-	&nbsp;Choose year:&nbsp;
-	<select ng-model="selected_year">
-		<option ng-repeat="year in year_choices">{{year}}</option>
-	</select>
-</p>
+<body>
 
 
 <calendar-week></calendar-week>

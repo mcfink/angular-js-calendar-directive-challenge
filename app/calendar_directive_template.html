@@ -1,3 +1,15 @@
+<div ng-controller="calendarController">
+<p>Choose month:&nbsp;
+	<select ng-model="selected_month">
+		<option ng-repeat="month in month_choices" value="{{ $index }}" ng-selected="$index == selected_month">{{month}}</option>
+	</select>
+	&nbsp;Choose year:&nbsp;
+	<select ng-model="selected_year">
+		<option ng-repeat="year in year_choices" value="{{selected_year}}" ng-selected="year == selected_year">{{year}}</option>
+	</select>
+</p>
+
+
 <table>
 	<tr ng-repeat='week in weeks'>
 		<td>{{ week[0].day}}</td>
@@ -9,3 +21,5 @@
 		<td>{{ week[6].day}}</td> 
 	</tr> 
 </table>
+</div>
+

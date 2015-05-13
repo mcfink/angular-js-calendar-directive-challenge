@@ -4,15 +4,19 @@
 		
 		var current_date = new Date();
 		var year_choices = [];
+		var current_month = current_date.getMonth();
 		var current_year = current_date.getFullYear();
 		for (var i = -20; i <= 20; i++){
 			year_choices.push(current_year + i);
 		}
 		$scope.year_choices = year_choices;
 		$scope.month_choices = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-		
+		$scope.selected_month = current_month;
+		$scope.selected_year = current_year;
 
-
+		$scope.$watch($scope.selected_month, function(){
+			console.log('the month changed');
+		})
 
 	};
 	
@@ -33,6 +37,22 @@
 			transclude: true,
 			controller: function($scope, $element, $attrs){
 				
+				var current_date = new Date();
+				var year_choices = [];
+				var current_month = current_date.getMonth();
+				var current_year = current_date.getFullYear();
+				for (var i = -20; i <= 20; i++){
+					year_choices.push(current_year + i);
+				}
+				$scope.year_choices = year_choices;
+				$scope.month_choices = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+				$scope.selected_month = current_month;
+				$scope.selected_year = current_year;
+
+				$scope.$watch($scope.selected_month, function(){
+					console.log('the month changed');
+				})
+
 				init();
 
 				function init(){
